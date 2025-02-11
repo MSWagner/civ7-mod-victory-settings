@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mod id="victory-settings" version="1"
+	xmlns="ModInfo">
+	<Properties>
+		<Name>LOC_MODULE_VICTORY_SETTINGS</Name>
+		<Description>This is a sample mod.</Description>
+		<Authors>Michael Wagner</Authors>
+		<ShowInBrowser>1</ShowInBrowser>
+		<Package>SolverMods</Package>
+	</Properties>
+	<Dependencies>
+		<Mod id="core" title="LOC_MODULE_CORE_NAME"/>
+  	<Mod id="base-standard" title="LOC_MODULE_BASE_STANDARD_NAME"/>
+		<Mod id="age-modern" title="LOC_MODULE_AGE_MODERN_NAME"/>
+	</Dependencies>
+	<ActionCriteria>
+		<Criteria id="always">
+			<AlwaysMet/>
+		</Criteria>
+		<!-- <Criteria id="modern-age-current">
+			<AgeInUse>AGE_MODERN</AgeInUse>
+		</Criteria> -->
+	</ActionCriteria>
+	<ActionGroups>
+		<ActionGroup id="base-game-main-victory-settings" scope="game" criteria="always">
+			<Actions>
+				<UpdateDatabase>
+					<Item>data/parameters.xml</Item>
+				</UpdateDatabase>
+			</Actions>
+		</ActionGroup>
+		<!-- <ActionGroup id="solver-mod-text" scope="game" criteria="antiquity-age-current">
+			<Actions>
+				<UpdateText>
+					<Item>text/en_us/UnitText.xml</Item>
+				</UpdateText>
+			</Actions>
+		</ActionGroup> -->
+	</ActionGroups>
+	<LocalizedText>
+		<File>text/en_us/SetupText.xml</File>
+		<File>l10n/SetupText.xml</File>
+	</LocalizedText>
+</Mod>
