@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Database>
 	<EnglishText>
+    <Row Tag="LOC_GROUPID_VICTORYOPTIONS">
+      <Text>Victory Options</Text>
+    </Row>
+    <Row Tag="LOC_ADVANCED_OPTIONS_VICTORY_CONDITIONS_MILITARY">
+      <Text>Military Victory</Text>
+    </Row>
+    <Row Tag="LOC_ADVANCED_OPTIONS_VICTORY_CONDITIONS_MILITARY_DESC">
+      <Text>Enable or disable military victory conditions</Text>
+    </Row>
+    <Row Tag="LOC_ADVANCED_OPTIONS_VICTORY_CONDITIONS_SCIENCE">
+      <Text>Science Victory</Text>
+    </Row>
+    <Row Tag="LOC_ADVANCED_OPTIONS_VICTORY_CONDITIONS_SCIENCE_DESC">
+      <Text>Enable or disable science victory conditions</Text>
+    </Row>
+    <Row Tag="LOC_ADVANCED_OPTIONS_VICTORY_CONDITIONS_ECONOMIC">
+      <Text>Economic Victory</Text>
+    </Row>
+    <Row Tag="LOC_ADVANCED_OPTIONS_VICTORY_CONDITIONS_ECONOMIC_DESC">
+      <Text>Enable or disable economic victory conditions</Text>
+    </Row>
 		<Row Tag="LOC_ADVANCED_OPTIONS_VICTORY_CONDITIONS_CULTURE">
 			<Text>Culture Victory</Text>
 		</Row>

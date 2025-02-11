@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Database>
   <LocalizedText>
+    <Replace Tag="LOC_GROUPID_VICTORYOPTIONS" Language="de_DE">
+      <Text>Siegbedingungen</Text>
+    </Replace>
+    <Replace Tag="LOC_ADVANCED_OPTIONS_VICTORY_CONDITIONS_MILITARY" Language="de_DE">
+      <Text>Militärsieg</Text>
+    </Replace>
+    <Replace Tag="LOC_ADVANCED_OPTIONS_VICTORY_CONDITIONS_MILITARY_DESC" Language="de_DE">
+      <Text>Militär Siegbedingungen ein- oder ausstellen</Text>
+    </Replace>
+    <Replace Tag="LOC_ADVANCED_OPTIONS_VICTORY_CONDITIONS_SCIENCE" Language="de_DE">
+      <Text>Wissenschaftssieg</Text>
+    </Replace>
+    <Replace Tag="LOC_ADVANCED_OPTIONS_VICTORY_CONDITIONS_SCIENCE_DESC" Language="de_DE">
+      <Text>Wissenschaft Siegbedingungen ein- oder ausstellen</Text>
+    </Replace>
+    <Replace Tag="LOC_ADVANCED_OPTIONS_VICTORY_CONDITIONS_ECONOMIC" Language="de_DE">
+      <Text>Wirtschaftssieg</Text>
+    </Replace>
+    <Replace Tag="LOC_ADVANCED_OPTIONS_VICTORY_CONDITIONS_ECONOMIC_DESC" Language="de_DE">
+      <Text>Wirtschaft Siegbedingungen ein- oder ausstellen</Text>
+    </Replace>
     <Replace Tag="LOC_ADVANCED_OPTIONS_VICTORY_CONDITIONS_CULTURE" Language="de_DE">
       <Text>Kultursieg</Text>
     </Replace>

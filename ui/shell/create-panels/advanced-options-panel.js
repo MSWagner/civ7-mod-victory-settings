@@ -15,7 +15,9 @@ import { getLeaderData } from '/core/ui/shell/create-panels/leader-select-model.
 import LeaderSelectModelManager from '/core/ui/shell/leader-select/leader-select-model-manager.js';
 import { Audio } from '/core/ui/audio-base/audio-support.js';
 const STANDARD_PARAMETERS = ["Age", "Difficulty", "GameSpeeds", "Map", "MapSize"];
-const ADVANCED_PARAMETERS = ["AgeLength", "DisasterIntensity", "CrisesEnabled", "CultureVictoryEnabled", "GameRandomSeed", "MapRandomSeed"];
+const VICTORY_PARAMETERS = ["MilitaryVictoryEnabled", "ScienceVictoryEnabled", "EconomicVictoryEnabled", "CultureVictoryEnabled"];
+const ADVANCED_PARAMETERS = ["AgeLength", "DisasterIntensity", "CrisesEnabled", "GameRandomSeed", "MapRandomSeed"];
+
 /**
  * AdvancedOptionsPanel displays advanced game options and player setup.
  *
@@ -30,6 +32,7 @@ class AdvancedOptionsPanel extends GameCreationPanelBase {
         this.leftArea = document.createElement("fxs-vslot");
         this.centerArea = document.createElement("fxs-frame");
         this.standardParamContainer = document.createElement("div");
+        this.victoryParamContainer = document.createElement("div");
         this.advancedParamContainer = document.createElement("div");
         this.playerConfigContainer = document.createElement("div");
         this.gameSetupPanel = document.createElement("fxs-vslot");
@@ -405,6 +408,7 @@ class AdvancedOptionsPanel extends GameCreationPanelBase {
         const scrollableContent = document.createElement("fxs-scrollable");
         scrollableContent.classList.add("flex-auto");
         this.gameSetupPanel.appendChild(scrollableContent);
+        
         const basicSettingsHeader = document.createElement("fxs-header");
         basicSettingsHeader.classList.add("font-title", "text-base", "uppercase");
         basicSettingsHeader.setAttribute("filigree-style", "small");
@@ -412,6 +416,15 @@ class AdvancedOptionsPanel extends GameCreationPanelBase {
         scrollableContent.appendChild(basicSettingsHeader);
         this.standardParamContainer.classList.add("flex", "flex-col");
         scrollableContent.appendChild(this.standardParamContainer);
+
+        const victorySettingsHeader = document.createElement("fxs-header");
+        victorySettingsHeader.classList.add("font-title", "text-base", "uppercase");
+        victorySettingsHeader.setAttribute("filigree-style", "small");
+        victorySettingsHeader.setAttribute("title", "LOC_GROUPID_VICTORYOPTIONS");
+        scrollableContent.appendChild(victorySettingsHeader);
+        this.victoryParamContainer.classList.add("flex", "flex-col");
+        scrollableContent.appendChild(this.victoryParamContainer);
+
         const advancedSettingsHeader = document.createElement("fxs-header");
         advancedSettingsHeader.classList.add("font-title", "text-base", "uppercase");
         advancedSettingsHeader.setAttribute("filigree-style", "small");
@@ -419,6 +432,7 @@ class AdvancedOptionsPanel extends GameCreationPanelBase {
         scrollableContent.appendChild(advancedSettingsHeader);
         this.advancedParamContainer.classList.add("flex", "flex-col");
         scrollableContent.appendChild(this.advancedParamContainer);
+
         this.gameSetupPanel.appendChild(this.createBottomNav());
     }
     refreshGameOptions() {
@@ -429,6 +443,7 @@ class AdvancedOptionsPanel extends GameCreationPanelBase {
         this.gameParamEles.length = 0;
         // Create new options
         const standardFragment = document.createDocumentFragment();
+        const victoryFragment = document.createDocumentFragment();
         const advancedFragment = document.createDocumentFragment();
         let focusEle = null;
         for (const setupParam of GameSetup.getGameParameters()) {
@@ -436,12 +451,14 @@ class AdvancedOptionsPanel extends GameCreationPanelBase {
                 const idString = GameSetup.resolveString(setupParam.ID);
                 // Determine if the parameter is standard, advanced or should not be shown
                 const isStandard = STANDARD_PARAMETERS.some(param => param == idString);
-                if (!isStandard && !ADVANCED_PARAMETERS.some(param => param == idString)) {
+                const isVictory = VICTORY_PARAMETERS.some(param => param == idString);
+                const isAdvandedOrVictory = isVictory || ADVANCED_PARAMETERS.some(param => param == idString);
+                if (!isStandard && !isAdvandedOrVictory) {
                     continue;
                 }
                 const paramEle = this.createOption(setupParam);
                 if (paramEle) {
-                    this.createParamEleLabel(setupParam, paramEle, isStandard ? standardFragment : advancedFragment);
+                    this.createParamEleLabel(setupParam, paramEle, isStandard ? standardFragment : isVictory ? victoryFragment : advancedFragment);
                     if (this.lastChangedParameter != '' && this.lastChangedParameter == idString) {
                         focusEle = paramEle;
                     }
@@ -450,6 +467,7 @@ class AdvancedOptionsPanel extends GameCreationPanelBase {
         }
         // Append new options to DOM
         this.standardParamContainer.appendChild(standardFragment);
+        this.victoryParamContainer.appendChild(victoryFragment);
         this.advancedParamContainer.appendChild(advancedFragment);
         const currentFocus = FocusManager.getFocus();
         if (currentFocus.isConnected == false && focusEle) {

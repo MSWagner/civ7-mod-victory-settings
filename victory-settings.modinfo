@@ -20,7 +20,7 @@
 		<ActionGroup id="core-shell-victory-settings" scope="shell" criteria="always">
 			<Actions>
 				<UpdateDatabase>
-					<Item>data/parameters.xml</Item>
+					<Item>data/core/config/SetupParameters.xml</Item>
 
 					<Item locale="de_DE">l10n/de_DE_Text.xml</Item>
 				</UpdateDatabase>

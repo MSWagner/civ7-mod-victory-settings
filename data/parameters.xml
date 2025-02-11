@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Database>
-	<Parameters>
-			<Row ParameterID="CultureVictoryEnabled" Name="LOC_ADVANCED_OPTIONS_VICTORY_CONDITIONS_CULTURE" Description="LOC_ADVANCED_OPTIONS_VICTORY_CONDITIONS_CULTURE_DESC" Domain="bool" Hash="0" DefaultValue="1" ConfigurationGroup="Game" ConfigurationKey="CultureVictoryEnabled" GroupId="AdvancedOptions" ChangeableAfterGameStart="0" SortIndex="2050"/>
-	</Parameters>
-</Database>
