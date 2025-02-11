@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database>
+  <LocalizedText>
+    <Replace Tag="LOC_ADVANCED_OPTIONS_VICTORY_CONDITIONS_CULTURE" Language="de_DE">
+      <Text>Kultursieg</Text>
+    </Replace>
+    <Replace Tag="LOC_ADVANCED_OPTIONS_VICTORY_CONDITIONS_CULTURE_DESC" Language="de_DE">
+      <Text>Kultur Siegbedingungen ein- oder ausstellen</Text>
+    </Replace>
+  </LocalizedText>
+</Database>
