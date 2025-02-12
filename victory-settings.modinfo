@@ -11,6 +11,7 @@
 	<Dependencies>
 		<Mod id="core" title="LOC_MODULE_CORE_NAME"/>
 		<Mod id="base-standard" title="LOC_MODULE_BASE_STANDARD_NAME"/>
+		<Mod id="age-modern" title="LOC_MODULE_AGE_MODERN_NAME"/>
 	</Dependencies>
 	<ActionCriteria>
 		<Criteria id="always">
@@ -25,6 +26,7 @@
 			<Actions>
 				<UpdateDatabase>
 					<Item>data/core/config/SetupParameters.xml</Item>
+					<Item>data/base-standard/victories.xml</Item>
 
 					<Item locale="de_DE">l10n/de_DE_Text.xml</Item>
 				</UpdateDatabase>
@@ -43,21 +45,9 @@
 
 		<ActionGroup id="base-standard-victory-settings" scope="game" criteria="modern-age-current">
 			<Actions>
-				<!-- <UpdateDatabase>
-					<Item>data/core/config/SetupParameters.xml</Item>
-
-					<Item locale="de_DE">l10n/de_DE_Text.xml</Item>
+				<UpdateDatabase>
+					<Item>data/age-modern/victories.xml</Item>
 				</UpdateDatabase>
-
-				<UpdateText>
-					<Item>text/en_us/PanelText.xml</Item>
-
-					<Item locale="de_DE">l10n/de_DE_PanelText.xml</Item>
-				</UpdateText> -->
-
-				<UIScripts>
-					<Item>ui/base-standard/victory-progress/panel-advisor-victory.js</Item>
-				</UIScripts>
 			</Actions>
 		</ActionGroup>
 	</ActionGroups>

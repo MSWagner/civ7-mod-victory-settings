@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database>
+	<Victories>
+		<Update>
+			<Where VictoryType="VICTORY_LEGACY"/>
+			<Set EnabledByDefault='0'/>
+		</Update>
+	</Victories>
+</Database>

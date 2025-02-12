@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database>
+	<Victories>
+    <Update>
+			<Where VictoryType="VICTORY_MODERN_MILITARY"/>
+			<Set EnabledByDefault='1'/>
+		</Update>
+		<Update>
+			<Where VictoryType="VICTORY_MODERN_ECONOMIC"/>
+			<Set EnabledByDefault='0'/>
+		</Update>
+    <Update>
+			<Where VictoryType="VICTORY_MODERN_SCIENCE"/>
+			<Set EnabledByDefault='0'/>
+		</Update>
+    <Update>
+			<Where VictoryType="VICTORY_MODERN_CULTURE"/>
+			<Set EnabledByDefault='0'/>
+		</Update>
+	</Victories>
+
+  <Strategies>
+    <Update>
+			<Where StrategyType="LEGACY_PATH_STRATEGY_IDEOLOGY"/>
+			<Set MinNumConditionsNeeded='0'/>
+		</Update>
+    <Update>
+			<Where StrategyType="LEGACY_PATH_STRATEGY_RAILROAD_TYCOON"/>
+			<Set MinNumConditionsNeeded='100'/>
+		</Update>
+    <Update>
+      <Where StrategyType="LEGACY_PATH_STRATEGY_SPACE_RACE"/>
+      <Set MinNumConditionsNeeded='100'/>
+    </Update>
+    <Update>
+      <Where StrategyType="LEGACY_PATH_STRATEGY_ARTIFACTS"/>
+      <Set MinNumConditionsNeeded='100'/>
+    </Update>
+
+    <Update>
+			<Where StrategyType="LEGACY_PATH_STRATEGY_IDEOLOGY"/>
+			<Set MaxNumConditionsNeeded='1'/>
+		</Update>
+    <Update>
+			<Where StrategyType="LEGACY_PATH_STRATEGY_RAILROAD_TYCOON"/>
+			<Set MaxNumConditionsNeeded='100'/>
+		</Update>
+    <Update>
+      <Where StrategyType="LEGACY_PATH_STRATEGY_SPACE_RACE"/>
+      <Set MaxNumConditionsNeeded='100'/>
+    </Update>
+    <Update>
+      <Where StrategyType="LEGACY_PATH_STRATEGY_ARTIFACTS"/>
+      <Set MaxNumConditionsNeeded='100'/>
+    </Update>
+
+
+    <Update>
+			<Where StrategyType='LEGACY_PATH_STRATEGY_IDEOLOGY'/>
+			<Set MinConditionPercentage='0'/>
+		</Update>
+    <Update>
+			<Where StrategyType='LEGACY_PATH_STRATEGY_RAILROAD_TYCOON'/>
+			<Set MinConditionPercentage='100'/>
+		</Update>
+    <Update>
+      <Where StrategyType='LEGACY_PATH_STRATEGY_SPACE_RACE'/>
+      <Set MinConditionPercentage='100'/>
+    </Update>
+    <Update>
+      <Where StrategyType='LEGACY_PATH_STRATEGY_ARTIFACTS'/>
+      <Set MinConditionPercentage='100'/>
+    </Update>
+  </Strategies>
+</Database>
