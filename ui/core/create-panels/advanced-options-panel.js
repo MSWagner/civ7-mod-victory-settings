@@ -581,6 +581,37 @@ class AdvancedOptionsPanel extends GameCreationPanelBase {
             if (parameter) {
                 GameSetup.setGameParameterValue(parameterID, newValue);
                 this.refreshPlayerOptions();
+
+                // const isVictoryParam = VICTORY_PARAMETERS.some(param => param == parameterID);
+                // if (isVictoryParam) {
+                //     console.log("Victory param changed");
+                //     console.error("Victory conditions are not implemented yet");
+                //     const civBonusItems = Database.query('config', 'select * from Criteria');
+                //     console.error("civBonusItems", civBonusItems);
+
+                    // switch (parameterID) {
+                    //     case "MilitaryVictoryEnabled":
+                    //         GameSetup.setGameParameterValue("ScienceVictoryEnabled", !newValue);
+                    //         GameSetup.setGameParameterValue("EconomicVictoryEnabled", !newValue);
+                    //         GameSetup.setGameParameterValue("CultureVictoryEnabled", !newValue);
+                    //         break;
+                    //     case "ScienceVictoryEnabled":
+                    //         GameSetup.setGameParameterValue("MilitaryVictoryEnabled", !newValue);
+                    //         GameSetup.setGameParameterValue("EconomicVictoryEnabled", !newValue);
+                    //         GameSetup.setGameParameterValue("CultureVictoryEnabled", !newValue);
+                    //         break;
+                    //     case "EconomicVictoryEnabled":
+                    //         GameSetup.setGameParameterValue("MilitaryVictoryEnabled", !newValue);
+                    //         GameSetup.setGameParameterValue("ScienceVictoryEnabled", !newValue);
+                    //         GameSetup.setGameParameterValue("CultureVictoryEnabled", !newValue);
+                    //         break;
+                    //     case "CultureVictoryEnabled":
+                    //         GameSetup.setGameParameterValue("MilitaryVictoryEnabled", !newValue);
+                    //         GameSetup.setGameParameterValue("ScienceVictoryEnabled", !newValue);
+                    //         GameSetup.setGameParameterValue("EconomicVictoryEnabled", !newValue);
+                    //         break;
+                    // }
+                // }
             }
         });
         return optionEle;

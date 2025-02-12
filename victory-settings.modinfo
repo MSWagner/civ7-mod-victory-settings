@@ -10,10 +10,14 @@
 	</Properties>
 	<Dependencies>
 		<Mod id="core" title="LOC_MODULE_CORE_NAME"/>
+		<Mod id="base-standard" title="LOC_MODULE_BASE_STANDARD_NAME"/>
 	</Dependencies>
 	<ActionCriteria>
 		<Criteria id="always">
 			<AlwaysMet/>
+		</Criteria>
+		<Criteria id="modern-age-current">
+			<AgeInUse>AGE_MODERN</AgeInUse>
 		</Criteria>
 	</ActionCriteria>
 	<ActionGroups>
@@ -32,7 +36,27 @@
 				</UpdateText>
 
 				<UIScripts>
-					<Item>ui/shell/create-panels/advanced-options-panel.js</Item>
+					<Item>ui/core/create-panels/advanced-options-panel.js</Item>
+				</UIScripts>
+			</Actions>
+		</ActionGroup>
+
+		<ActionGroup id="base-standard-victory-settings" scope="game" criteria="modern-age-current">
+			<Actions>
+				<!-- <UpdateDatabase>
+					<Item>data/core/config/SetupParameters.xml</Item>
+
+					<Item locale="de_DE">l10n/de_DE_Text.xml</Item>
+				</UpdateDatabase>
+
+				<UpdateText>
+					<Item>text/en_us/PanelText.xml</Item>
+
+					<Item locale="de_DE">l10n/de_DE_PanelText.xml</Item>
+				</UpdateText> -->
+
+				<UIScripts>
+					<Item>ui/base-standard/victory-progress/panel-advisor-victory.js</Item>
 				</UIScripts>
 			</Actions>
 		</ActionGroup>
