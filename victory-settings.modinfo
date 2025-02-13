@@ -19,6 +19,11 @@
 		</Criteria>
 		<Criteria id="modern-age-current">
 			<AgeInUse>AGE_MODERN</AgeInUse>
+			 <ConfigurationValueMatches>
+					<Group>Game</Group>
+					<ConfigurationId>MilitaryVictoryEnabled</ConfigurationId>
+					<Value>1</Value>
+        </ConfigurationValueMatches>
 		</Criteria>
 	</ActionCriteria>
 	<ActionGroups>
@@ -48,6 +53,10 @@
 				<UpdateDatabase>
 					<Item>data/age-modern/victories.xml</Item>
 				</UpdateDatabase>
+
+				<UIScripts>
+					<Item>ui/base-standard/victory-progress/panel-advisor-victory.js</Item>
+				</UIScripts>
 			</Actions>
 		</ActionGroup>
 	</ActionGroups>
