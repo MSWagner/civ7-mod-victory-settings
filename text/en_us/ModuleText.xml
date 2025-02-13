@@ -2,7 +2,7 @@
 <Database>
 	<EnglishText>
 		<Row Tag="LOC_MODULE_VICTORY_SETTINGS">
-			<Text>Advanded Options - Victory Conditions</Text>
+			<Text>Advanced Options - Victory Conditions</Text>
 		</Row>
 		<Row Tag="LOC_MODULE_VICTORY_SETTINGS_DESC">
 			<Text>Prevents selected victory conditions and the selection of AI strategies for them.</Text>
