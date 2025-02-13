@@ -19,35 +19,35 @@
 		</Criteria>
 		<Criteria id="modern-age-current-victory-military-disabled">
 			<AgeInUse>AGE_MODERN</AgeInUse>
-			 <ConfigurationValueMatches>
+			<ConfigurationValueMatches>
 					<Group>Game</Group>
 					<ConfigurationId>MilitaryVictoryEnabled</ConfigurationId>
 					<Value>0</Value>
-        </ConfigurationValueMatches>
+			</ConfigurationValueMatches>
 		</Criteria>
 		<Criteria id="modern-age-current-victory-economic-disabled">
 			<AgeInUse>AGE_MODERN</AgeInUse>
-			 <ConfigurationValueMatches>
+			<ConfigurationValueMatches>
 					<Group>Game</Group>
 					<ConfigurationId>EconomicVictoryEnabled</ConfigurationId>
 					<Value>0</Value>
-        </ConfigurationValueMatches>
+			</ConfigurationValueMatches>
 		</Criteria>
 		<Criteria id="modern-age-current-victory-science-disabled">
 			<AgeInUse>AGE_MODERN</AgeInUse>
-			 <ConfigurationValueMatches>
+			<ConfigurationValueMatches>
 					<Group>Game</Group>
 					<ConfigurationId>ScienceVictoryEnabled</ConfigurationId>
 					<Value>0</Value>
-        </ConfigurationValueMatches>
+			</ConfigurationValueMatches>
 		</Criteria>
 		<Criteria id="modern-age-current-victory-culture-disabled">
 			<AgeInUse>AGE_MODERN</AgeInUse>
-			 <ConfigurationValueMatches>
+			<ConfigurationValueMatches>
 					<Group>Game</Group>
 					<ConfigurationId>CultureVictoryEnabled</ConfigurationId>
 					<Value>0</Value>
-        </ConfigurationValueMatches>
+			</ConfigurationValueMatches>
 		</Criteria>
 	</ActionCriteria>
 	<ActionGroups>

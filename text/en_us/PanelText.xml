@@ -22,11 +22,11 @@
     <Row Tag="LOC_ADVANCED_OPTIONS_VICTORY_CONDITIONS_ECONOMIC_DESC">
       <Text>Enable or disable economic victory conditions</Text>
     </Row>
-		<Row Tag="LOC_ADVANCED_OPTIONS_VICTORY_CONDITIONS_CULTURE">
-			<Text>Culture Victory</Text>
-		</Row>
+    <Row Tag="LOC_ADVANCED_OPTIONS_VICTORY_CONDITIONS_CULTURE">
+      <Text>Culture Victory</Text>
+    </Row>
     <Row Tag="LOC_ADVANCED_OPTIONS_VICTORY_CONDITIONS_CULTURE_DESC">
-			<Text>Enable or disable culture victory conditions</Text>
-		</Row>
+      <Text>Enable or disable culture victory conditions</Text>
+    </Row>
 	</EnglishText>
 </Database>

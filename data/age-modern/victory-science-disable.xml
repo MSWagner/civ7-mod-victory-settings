@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Database>
-	<Victories>
-		<Update>
-			<Where VictoryType="VICTORY_MODERN_SCIENCE"/>
-			<Set EnabledByDefault='0'/>
-		</Update>
-	</Victories>
+  <Victories>
+    <Update>
+      <Where VictoryType="VICTORY_MODERN_SCIENCE"/>
+      <Set EnabledByDefault='0'/>
+    </Update>
+    </Victories>
 
   <Strategies>
     <Update>
-			<Where StrategyType="LEGACY_PATH_STRATEGY_SPACE_RACE"/>
-			<Set MinNumConditionsNeeded='100'/>
-		</Update>
+      <Where StrategyType="LEGACY_PATH_STRATEGY_SPACE_RACE"/>
+      <Set MinNumConditionsNeeded='100'/>
+    </Update>
 
     <Update>
-			<Where StrategyType="LEGACY_PATH_STRATEGY_SPACE_RACE"/>
-			<Set MaxNumConditionsNeeded='100'/>
-		</Update>
+      <Where StrategyType="LEGACY_PATH_STRATEGY_SPACE_RACE"/>
+      <Set MaxNumConditionsNeeded='100'/>
+    </Update>
 
     <Update>
-			<Where StrategyType='LEGACY_PATH_STRATEGY_SPACE_RACE'/>
-			<Set MinConditionPercentage='100'/>
-		</Update>
+      <Where StrategyType='LEGACY_PATH_STRATEGY_SPACE_RACE'/>
+      <Set MinConditionPercentage='100'/>
+    </Update>
   </Strategies>
 
   <Projects>
     <Update>
-			<Where ProjectType='PROJECT_LAUNCH_ROCKET'/>
-			<Set MaxPlayerInstances='0'/>
-		</Update>
+      <Where ProjectType='PROJECT_LAUNCH_ROCKET'/>
+      <Set MaxPlayerInstances='0'/>
+    </Update>
   </Projects>
 </Database>

@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Database>
-	<Victories>
-		<Update>
-			<Where VictoryType="VICTORY_MODERN_CULTURE"/>
-			<Set EnabledByDefault='0'/>
-		</Update>
-	</Victories>
+  <Victories>
+    <Update>
+      <Where VictoryType="VICTORY_MODERN_CULTURE"/>
+      <Set EnabledByDefault='0'/>
+    </Update>
+  </Victories>
 
   <Strategies>
     <Update>
-			<Where StrategyType="LEGACY_PATH_STRATEGY_ARTIFACTS"/>
-			<Set MinNumConditionsNeeded='100'/>
-		</Update>
+      <Where StrategyType="LEGACY_PATH_STRATEGY_ARTIFACTS"/>
+      <Set MinNumConditionsNeeded='100'/>
+    </Update>
 
     <Update>
-			<Where StrategyType="LEGACY_PATH_STRATEGY_ARTIFACTS"/>
-			<Set MaxNumConditionsNeeded='100'/>
-		</Update>
+      <Where StrategyType="LEGACY_PATH_STRATEGY_ARTIFACTS"/>
+      <Set MaxNumConditionsNeeded='100'/>
+    </Update>
 
     <Update>
-			<Where StrategyType='LEGACY_PATH_STRATEGY_ARTIFACTS'/>
-			<Set MinConditionPercentage='100'/>
-		</Update>
+      <Where StrategyType='LEGACY_PATH_STRATEGY_ARTIFACTS'/>
+      <Set MinConditionPercentage='100'/>
+    </Update>
   </Strategies>
 
   <Wonders>
     <Update>
-			<Where ConstructibleType='WONDER_WORLDS_FAIR'/>
-			<Set MaxWorldInstances='0'/>
-		</Update>
+      <Where ConstructibleType='WONDER_WORLDS_FAIR'/>
+      <Set MaxWorldInstances='0'/>
+    </Update>
     <Update>
-			<Where ConstructibleType='WONDER_WORLDS_FAIR'/>
-			<Set MaxPerPlayer='0'/>
-		</Update>
+      <Where ConstructibleType='WONDER_WORLDS_FAIR'/>
+      <Set MaxPerPlayer='0'/>
+    </Update>
   </Wonders>
 </Database>
