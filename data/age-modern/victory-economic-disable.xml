@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database>
+	<Victories>
+		<Update>
+			<Where VictoryType="VICTORY_MODERN_ECONOMIC"/>
+			<Set EnabledByDefault='0'/>
+		</Update>
+	</Victories>
+
+  <Strategies>
+    <Update>
+			<Where StrategyType="LEGACY_PATH_STRATEGY_RAILROAD_TYCOON"/>
+			<Set MinNumConditionsNeeded='100'/>
+		</Update>
+
+    <Update>
+			<Where StrategyType="LEGACY_PATH_STRATEGY_RAILROAD_TYCOON"/>
+			<Set MaxNumConditionsNeeded='100'/>
+		</Update>
+
+    <Update>
+			<Where StrategyType='LEGACY_PATH_STRATEGY_RAILROAD_TYCOON'/>
+			<Set MinConditionPercentage='100'/>
+		</Update>
+  </Strategies>
+
+  <GreatPersonIndividuals>
+    <Update>
+			<Where GreatPersonIndividualType='GREAT_PERSON_INDIVIDUAL_VICTORY_JOHN_MAYNARD_KEYNES'/>
+			<Set ActionCharges='0'/>
+		</Update>
+  </GreatPersonIndividuals>
+</Database>

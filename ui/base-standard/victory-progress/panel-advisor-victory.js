@@ -420,28 +420,29 @@ class PanelAdvisorVictory extends Panel {
         console.error("advisorString", advisorString);
         console.error("this.EnabledVictoryAdvisorTypes", this.EnabledVictoryAdvisorTypes);
 
+        // victorty title
+        const victoryName = document.createElement('p');
+        victoryName.classList.add('advisor-panel_victory-title', 'font-title', 'text-lg', 'mb-2', 'uppercase', 'flow-row', 'font-bold', 'tracking-150', 'justify-center', 'text-center', 'text-gradient-secondary');
+        victoryName.classList.toggle('text-xl', window.innerHeight > 1000);
+        victoryName.setAttribute('data-l10n-id', chosenVictory.Name);
+        //civilopedia link
+        const civilopedieaLinkWrapper = document.createElement('div');
+        civilopedieaLinkWrapper.classList.add('advisor-panel__civilopedia', 'w-96', 'text-center');
+        // victory description
+        const victoryDescription = document.createElement('p');
+        victoryDescription.classList.add('advisor-panel_victory-description', 'self-center', 'font-body', 'text-sm', 'mb-2', 'font-normal', 'text-center', 'font-fit-shrink', 'max-h-25');
+        victoryDescription.classList.toggle('text-base', window.innerHeight > 1000);
+        victoryDescription.setAttribute('data-l10n-id', chosenVictory.Description);
+        victoryTextContainer.appendChild(victoryName);
+        victoryTextContainer.appendChild(victoryDescription);
+        victoryTextContainer.appendChild(civilopedieaLinkWrapper);
+        const trackQuestWrapper = this.renderTrackVictoryCheckBox();
+        titleContainer.appendChild(iconsWrapper);
+        titleContainer.appendChild(victoryTextContainer);
+        titleContainer.appendChild(trackQuestWrapper);
+
         if (this.EnabledVictoryAdvisorTypes.includes(advisorString)) {
-            // victorty title
-            const victoryName = document.createElement('p');
-            victoryName.classList.add('advisor-panel_victory-title', 'font-title', 'text-lg', 'mb-2', 'uppercase', 'flow-row', 'font-bold', 'tracking-150', 'justify-center', 'text-center', 'text-gradient-secondary');
-            victoryName.classList.toggle('text-xl', window.innerHeight > 1000);
-            victoryName.setAttribute('data-l10n-id', chosenVictory.Name);
-            //civilopedia link
-            const civilopedieaLinkWrapper = document.createElement('div');
-            civilopedieaLinkWrapper.classList.add('advisor-panel__civilopedia', 'w-96', 'text-center');
-            // victory description
-            const victoryDescription = document.createElement('p');
-            victoryDescription.classList.add('advisor-panel_victory-description', 'self-center', 'font-body', 'text-sm', 'mb-2', 'font-normal', 'text-center', 'font-fit-shrink', 'max-h-25');
-            victoryDescription.classList.toggle('text-base', window.innerHeight > 1000);
-            victoryDescription.setAttribute('data-l10n-id', chosenVictory.Description);
-            victoryTextContainer.appendChild(victoryName);
-            victoryTextContainer.appendChild(victoryDescription);
-            victoryTextContainer.appendChild(civilopedieaLinkWrapper);
-            const trackQuestWrapper = this.renderTrackVictoryCheckBox();
             const victoryLinkWrapper = this.createVictoryCivilopediaLink();
-            titleContainer.appendChild(iconsWrapper);
-            titleContainer.appendChild(victoryTextContainer);
-            titleContainer.appendChild(trackQuestWrapper);
             if (this.showVictoryDetailsLink) {
                 const civilopediaLink = this.createCivilopediaText();
                 civilopediaLink.classList.add('text-sm', 'text-center', 'flex');
@@ -604,7 +605,9 @@ class PanelAdvisorVictory extends Panel {
         rewardIconHolder.appendChild(rewardIcon);
         const victoryText = document.createElement('div');
         victoryText.classList.add('advisor-panel__victory-desc', 'font-title-base', 'uppercase', 'text-gradient-secondary', 'absolute', '-top-10', '-left-8', 'whitespace-nowrap', 'font-fit-shrink');
-        if (this.selectedAgeType === "AGE_MODERN") {
+
+        const advisorString = AdvisorProgress.getAdvisorStringByAdvisorType(chosenAdvisor);
+        if (this.selectedAgeType === "AGE_MODERN" && this.EnabledVictoryAdvisorTypes.includes(advisorString)) {
             victoryText.setAttribute('data-l10n-id', 'LOC_VICTORY_VICTORY');
             rewardIcon.classList.add(`advisor-panel__victory-icon`);
         }

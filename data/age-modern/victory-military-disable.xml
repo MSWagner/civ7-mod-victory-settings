@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database>
+	<Victories>
+    <Update>
+			<Where VictoryType="VICTORY_MODERN_MILITARY"/>
+			<Set EnabledByDefault='0'/>
+		</Update>
+	</Victories>
+
+  <Strategies>
+    <Update>
+			<Where StrategyType="LEGACY_PATH_STRATEGY_IDEOLOGY"/>
+			<Set MinNumConditionsNeeded='100'/>
+		</Update>
+
+    <Update>
+			<Where StrategyType="LEGACY_PATH_STRATEGY_IDEOLOGY"/>
+			<Set MaxNumConditionsNeeded='100'/>
+		</Update>
+
+    <Update>
+			<Where StrategyType='LEGACY_PATH_STRATEGY_IDEOLOGY'/>
+			<Set MinConditionPercentage='100'/>
+		</Update>
+  </Strategies>
+
+  <Projects>
+    <Update>
+			<Where ProjectType='PROJECT_OPERATION_IVY'/>
+			<Set MaxPlayerInstances='0'/>
+		</Update>
+  </Projects>
+</Database>

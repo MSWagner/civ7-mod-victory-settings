@@ -3,7 +3,7 @@
 	xmlns="ModInfo">
 	<Properties>
 		<Name>LOC_MODULE_VICTORY_SETTINGS</Name>
-		<Description>This is a sample mod.</Description>
+		<Description>LOC_MODULE_VICTORY_SETTINGS_DESC</Description>
 		<Authors>Michael Wagner</Authors>
 		<ShowInBrowser>1</ShowInBrowser>
 		<Package>VictoryConditionsMod</Package>
@@ -17,22 +17,45 @@
 		<Criteria id="always">
 			<AlwaysMet/>
 		</Criteria>
-		<Criteria id="modern-age-current">
+		<Criteria id="modern-age-current-victory-military-disabled">
 			<AgeInUse>AGE_MODERN</AgeInUse>
 			 <ConfigurationValueMatches>
 					<Group>Game</Group>
 					<ConfigurationId>MilitaryVictoryEnabled</ConfigurationId>
-					<Value>1</Value>
+					<Value>0</Value>
+        </ConfigurationValueMatches>
+		</Criteria>
+		<Criteria id="modern-age-current-victory-economic-disabled">
+			<AgeInUse>AGE_MODERN</AgeInUse>
+			 <ConfigurationValueMatches>
+					<Group>Game</Group>
+					<ConfigurationId>EconomicVictoryEnabled</ConfigurationId>
+					<Value>0</Value>
+        </ConfigurationValueMatches>
+		</Criteria>
+		<Criteria id="modern-age-current-victory-science-disabled">
+			<AgeInUse>AGE_MODERN</AgeInUse>
+			 <ConfigurationValueMatches>
+					<Group>Game</Group>
+					<ConfigurationId>ScienceVictoryEnabled</ConfigurationId>
+					<Value>0</Value>
+        </ConfigurationValueMatches>
+		</Criteria>
+		<Criteria id="modern-age-current-victory-culture-disabled">
+			<AgeInUse>AGE_MODERN</AgeInUse>
+			 <ConfigurationValueMatches>
+					<Group>Game</Group>
+					<ConfigurationId>CultureVictoryEnabled</ConfigurationId>
+					<Value>0</Value>
         </ConfigurationValueMatches>
 		</Criteria>
 	</ActionCriteria>
 	<ActionGroups>
+		<!-- Shell -->
 		<ActionGroup id="core-shell-victory-settings" scope="shell" criteria="always">
 			<Actions>
 				<UpdateDatabase>
 					<Item>data/core/config/SetupParameters.xml</Item>
-					<Item>data/base-standard/victories.xml</Item>
-
 					<Item locale="de_DE">l10n/de_DE_Text.xml</Item>
 				</UpdateDatabase>
 
@@ -48,15 +71,42 @@
 			</Actions>
 		</ActionGroup>
 
-		<ActionGroup id="base-standard-victory-settings" scope="game" criteria="modern-age-current">
+		<!-- Game UI -->
+		<ActionGroup id="base-standard-victory-advisor" scope="game" criteria="always">
 			<Actions>
-				<UpdateDatabase>
-					<Item>data/age-modern/victories.xml</Item>
-				</UpdateDatabase>
-
 				<UIScripts>
 					<Item>ui/base-standard/victory-progress/panel-advisor-victory.js</Item>
 				</UIScripts>
+			</Actions>
+		</ActionGroup>
+
+		<!-- Modern Age -->
+		<ActionGroup id="modern-age-current-victory-military-disable" scope="game" criteria="modern-age-current-victory-military-disabled">
+			<Actions>
+				<UpdateDatabase>
+					<Item>data/age-modern/victory-military-disable.xml</Item>
+				</UpdateDatabase>
+			</Actions>
+		</ActionGroup>
+		<ActionGroup id="modern-age-current-victory-economic-disable" scope="game" criteria="modern-age-current-victory-economic-disabled">
+			<Actions>
+				<UpdateDatabase>
+					<Item>data/age-modern/victory-economic-disable.xml</Item>
+				</UpdateDatabase>
+			</Actions>
+		</ActionGroup>
+		<ActionGroup id="modern-age-current-victory-science-disable" scope="game" criteria="modern-age-current-victory-science-disabled">
+			<Actions>
+				<UpdateDatabase>
+					<Item>data/age-modern/victory-science-disable.xml</Item>
+				</UpdateDatabase>
+			</Actions>
+		</ActionGroup>
+		<ActionGroup id="modern-age-current-victory-culture-disable" scope="game" criteria="modern-age-current-victory-culture-disabled">
+			<Actions>
+				<UpdateDatabase>
+					<Item>data/age-modern/victory-culture-disable.xml</Item>
+				</UpdateDatabase>
 			</Actions>
 		</ActionGroup>
 	</ActionGroups>

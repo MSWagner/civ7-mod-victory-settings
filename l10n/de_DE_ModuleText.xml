@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database>
+  <LocalizedText>
+    <Replace Tag="LOC_MODULE_VICTORY_SETTINGS" Language="de_DE">
+      <Text>Erweiterte Optionen - Siegbedingungen</Text>
+    </Replace>
+    <Replace Tag="LOC_MODULE_VICTORY_SETTINGS_DESC" Language="de_DE">
+      <Text>Verhindert ausgewählte Siegbedingunen und die Auswahl der KI-Strategien dafür.</Text>
+    </Replace>
+  </LocalizedText>
+</Database>
