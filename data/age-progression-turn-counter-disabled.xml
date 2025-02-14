@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database>
+  <AgeProgressionEvents>
+    <Update>
+      <Where AgeProgressionEventType='AGE_PROGRESSION_TURN_COUNTER'/>
+      <Set Points='0'/>
+    </Update>
+	</AgeProgressionEvents>
+</Database>

@@ -28,5 +28,22 @@
     <Replace Tag="LOC_ADVANCED_OPTIONS_VICTORY_CONDITIONS_CULTURE_DESC" Language="de_DE">
       <Text>Kultur Siegbedingungen ein- oder ausstellen</Text>
     </Replace>
+
+    <Replace Tag="LOC_GROUPID_PROGRESSIONOPTIONS" Language="de_DE">
+      <Text>Zeitalter Fortschritt</Text>
+    </Replace>
+    <Replace Tag="LOC_ADVANCED_OPTIONS_PROGRESSION_TURN_COUNTER" Language="de_DE">
+      <Text>Runden</Text>
+    </Replace>
+        <Replace Tag="LOC_ADVANCED_OPTIONS_PROGRESSION_TURN_COUNTER_DESC" Language="de_DE">
+      <Text>Soll durch die Rundenzahl der Fortschritt erhöht werden ein?</Text>
+    </Replace>
+
+    <Replace Tag="LOC_ADVANCED_OPTIONS_PROGRESSION_PLAYER_ELIMINATED" Language="de_DE">
+      <Text>Spieler-Eliminierung</Text>
+    </Replace>
+        <Replace Tag="LOC_ADVANCED_OPTIONS_PROGRESSION_PLAYER_ELIMINATED_DESC" Language="de_DE">
+      <Text>Soll durch die Eliminierung von Spielern der Fortschritt erhöht werden ein?</Text>
+    </Replace>
   </LocalizedText>
 </Database>

@@ -49,6 +49,28 @@
 					<Value>0</Value>
 			</ConfigurationValueMatches>
 		</Criteria>
+		<Criteria id="progression-player-eliminated-disabled">
+			<ConfigurationValueMatches>
+					<Group>Game</Group>
+					<ConfigurationId>ProgressionFromPlayerEliminatedEnabled</ConfigurationId>
+					<Value>0</Value>
+			</ConfigurationValueMatches>
+		</Criteria>
+		
+		<Criteria id="age-progression-turn-counter-disabled">
+			<ConfigurationValueMatches>
+					<Group>Game</Group>
+					<ConfigurationId>AgeProgressionFromTurnCounterEnabled</ConfigurationId>
+					<Value>0</Value>
+			</ConfigurationValueMatches>
+		</Criteria>
+		<Criteria id="age-progression-player-eliminated-disabled">
+			<ConfigurationValueMatches>
+					<Group>Game</Group>
+					<ConfigurationId>AgeProgressionFromPlayerEliminatedEnabled</ConfigurationId>
+					<Value>0</Value>
+			</ConfigurationValueMatches>
+		</Criteria>
 	</ActionCriteria>
 	<ActionGroups>
 		<!-- Shell -->
@@ -77,6 +99,22 @@
 				<UIScripts>
 					<Item>ui/base-standard/victory-progress/panel-advisor-victory.js</Item>
 				</UIScripts>
+			</Actions>
+		</ActionGroup>
+
+		<!-- Progression -->
+		<ActionGroup id="age-progression-turn-counter-disable" scope="game" criteria="age-progression-turn-counter-disabled">
+			<Actions>
+				<UpdateDatabase>
+					<Item>data/age-progression-turn-counter-disabled.xml</Item>
+				</UpdateDatabase>
+			</Actions>
+		</ActionGroup>
+		<ActionGroup id="age-progression-player-eliminated-disable" scope="game" criteria="age-progression-player-eliminated-disabled">
+			<Actions>
+				<UpdateDatabase>
+					<Item>data/age-progression-player-eliminated-disabled.xml</Item>
+				</UpdateDatabase>
 			</Actions>
 		</ActionGroup>
 

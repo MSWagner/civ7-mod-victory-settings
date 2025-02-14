@@ -28,5 +28,22 @@
     <Row Tag="LOC_ADVANCED_OPTIONS_VICTORY_CONDITIONS_CULTURE_DESC">
       <Text>Enable or disable culture victory conditions</Text>
     </Row>
+
+    <Row Tag="LOC_GROUPID_PROGRESSIONOPTIONS">
+      <Text>Age Progression</Text>
+    </Row>
+    <Row Tag="LOC_ADVANCED_OPTIONS_PROGRESSION_TURN_COUNTER">
+      <Text>Turn Counter</Text>
+    </Row>
+    <Row Tag="LOC_ADVANCED_OPTIONS_PROGRESSION_TURN_COUNTER_DESC">
+      <Text>Should progression be increased by the number of turns?</Text>
+    </Row>
+
+    <Row Tag="LOC_ADVANCED_OPTIONS_PROGRESSION_PLAYER_ELIMINATED">
+      <Text>Player Elimination</Text>
+    </Row>
+    <Row Tag="LOC_ADVANCED_OPTIONS_PROGRESSION_PLAYER_ELIMINATED_DESC">
+      <Text>Should progression be increased by the elimination of players?</Text>
+    </Row>
 	</EnglishText>
 </Database>

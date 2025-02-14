@@ -30,4 +30,11 @@
       <Set MaxPlayerInstances='0'/>
     </Update>
   </Projects>
+
+  <AgeProgressionMilestones>
+    <Update>
+      <Where LegacyPathType='LEGACY_PATH_MODERN_SCIENCE'/>
+      <Set AgeProgressionAmount='0'/>
+    </Update>
+	</AgeProgressionMilestones>
 </Database>
