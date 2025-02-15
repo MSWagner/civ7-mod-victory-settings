@@ -11,12 +11,84 @@
 	<Dependencies>
 		<Mod id="core" title="LOC_MODULE_CORE_NAME"/>
 		<Mod id="base-standard" title="LOC_MODULE_BASE_STANDARD_NAME"/>
+		<Mod id="age-antiquity" title="LOC_MODULE_AGE_ANTIQUITY_NAME"/>
+		<Mod id="age-exploration" title="LOC_MODULE_AGE_EXPLORATION_NAME"/>
 		<Mod id="age-modern" title="LOC_MODULE_AGE_MODERN_NAME"/>
 	</Dependencies>
 	<ActionCriteria>
 		<Criteria id="always">
 			<AlwaysMet/>
 		</Criteria>
+
+		<!-- Antiquity Age -->
+		<Criteria id="antiquity-age-current-victory-military-disabled">
+			<AgeInUse>AGE_ANTIQUITY</AgeInUse>
+			<ConfigurationValueMatches>
+					<Group>Game</Group>
+					<ConfigurationId>MilitaryVictoryEnabled</ConfigurationId>
+					<Value>0</Value>
+			</ConfigurationValueMatches>
+		</Criteria>
+		<Criteria id="antiquity-age-current-victory-economic-disabled">
+			<AgeInUse>AGE_ANTIQUITY</AgeInUse>
+			<ConfigurationValueMatches>
+					<Group>Game</Group>
+					<ConfigurationId>EconomicVictoryEnabled</ConfigurationId>
+					<Value>0</Value>
+			</ConfigurationValueMatches>
+		</Criteria>
+		<Criteria id="antiquity-age-current-victory-science-disabled">
+			<AgeInUse>AGE_ANTIQUITY</AgeInUse>
+			<ConfigurationValueMatches>
+					<Group>Game</Group>
+					<ConfigurationId>ScienceVictoryEnabled</ConfigurationId>
+					<Value>0</Value>
+			</ConfigurationValueMatches>
+		</Criteria>
+		<Criteria id="antiquity-age-current-victory-culture-disabled">
+			<AgeInUse>AGE_ANTIQUITY</AgeInUse>
+			<ConfigurationValueMatches>
+					<Group>Game</Group>
+					<ConfigurationId>CultureVictoryEnabled</ConfigurationId>
+					<Value>0</Value>
+			</ConfigurationValueMatches>
+		</Criteria>
+
+		<!-- Exploration Age -->
+		<Criteria id="exploration-age-current-victory-military-disabled">
+			<AgeInUse>AGE_EXPLORATION</AgeInUse>
+			<ConfigurationValueMatches>
+					<Group>Game</Group>
+					<ConfigurationId>MilitaryVictoryEnabled</ConfigurationId>
+					<Value>0</Value>
+			</ConfigurationValueMatches>
+		</Criteria>
+		<Criteria id="exploration-age-current-victory-economic-disabled">
+			<AgeInUse>AGE_EXPLORATION</AgeInUse>
+			<ConfigurationValueMatches>
+					<Group>Game</Group>
+					<ConfigurationId>EconomicVictoryEnabled</ConfigurationId>
+					<Value>0</Value>
+			</ConfigurationValueMatches>
+		</Criteria>
+		<Criteria id="exploration-age-current-victory-science-disabled">
+			<AgeInUse>AGE_EXPLORATION</AgeInUse>
+			<ConfigurationValueMatches>
+					<Group>Game</Group>
+					<ConfigurationId>ScienceVictoryEnabled</ConfigurationId>
+					<Value>0</Value>
+			</ConfigurationValueMatches>
+		</Criteria>
+		<Criteria id="exploration-age-current-victory-culture-disabled">
+			<AgeInUse>AGE_EXPLORATION</AgeInUse>
+			<ConfigurationValueMatches>
+					<Group>Game</Group>
+					<ConfigurationId>CultureVictoryEnabled</ConfigurationId>
+					<Value>0</Value>
+			</ConfigurationValueMatches>
+		</Criteria>
+
+		<!-- Modern Age -->
 		<Criteria id="modern-age-current-victory-military-disabled">
 			<AgeInUse>AGE_MODERN</AgeInUse>
 			<ConfigurationValueMatches>
@@ -49,14 +121,8 @@
 					<Value>0</Value>
 			</ConfigurationValueMatches>
 		</Criteria>
-		<Criteria id="progression-player-eliminated-disabled">
-			<ConfigurationValueMatches>
-					<Group>Game</Group>
-					<ConfigurationId>ProgressionFromPlayerEliminatedEnabled</ConfigurationId>
-					<Value>0</Value>
-			</ConfigurationValueMatches>
-		</Criteria>
 		
+		<!-- Age Progression-->
 		<Criteria id="age-progression-turn-counter-disabled">
 			<ConfigurationValueMatches>
 					<Group>Game</Group>
@@ -114,6 +180,66 @@
 			<Actions>
 				<UpdateDatabase>
 					<Item>data/age-progression-player-eliminated-disabled.xml</Item>
+				</UpdateDatabase>
+			</Actions>
+		</ActionGroup>
+
+		<!-- Antiquity Age -->
+		<ActionGroup id="antiquity-age-current-victory-military-disable" scope="game" criteria="antiquity-age-current-victory-military-disabled">
+			<Actions>
+				<UpdateDatabase>
+					<Item>data/age-antiquity/victory-military-disable.xml</Item>
+				</UpdateDatabase>
+			</Actions>
+		</ActionGroup>
+		<ActionGroup id="antiquity-age-current-victory-economic-disable" scope="game" criteria="antiquity-age-current-victory-economic-disabled">
+			<Actions>
+				<UpdateDatabase>
+					<Item>data/age-antiquity/victory-economic-disable.xml</Item>
+				</UpdateDatabase>
+			</Actions>
+		</ActionGroup>
+		<ActionGroup id="antiquity-age-current-victory-science-disable" scope="game" criteria="antiquity-age-current-victory-science-disabled">
+			<Actions>
+				<UpdateDatabase>
+					<Item>data/age-antiquity/victory-science-disable.xml</Item>
+				</UpdateDatabase>
+			</Actions>
+		</ActionGroup>
+		<ActionGroup id="antiquity-age-current-victory-culture-disable" scope="game" criteria="antiquity-age-current-victory-culture-disabled">
+			<Actions>
+				<UpdateDatabase>
+					<Item>data/age-antiquity/victory-culture-disable.xml</Item>
+				</UpdateDatabase>
+			</Actions>
+		</ActionGroup>
+
+		<!-- Exploration Age -->
+		<ActionGroup id="exploration-age-current-victory-military-disable" scope="game" criteria="exploration-age-current-victory-military-disabled">
+			<Actions>
+				<UpdateDatabase>
+					<Item>data/age-exploration/victory-military-disable.xml</Item>
+				</UpdateDatabase>
+			</Actions>
+		</ActionGroup>
+		<ActionGroup id="exploration-age-current-victory-economic-disable" scope="game" criteria="exploration-age-current-victory-economic-disabled">
+			<Actions>
+				<UpdateDatabase>
+					<Item>data/age-exploration/victory-economic-disable.xml</Item>
+				</UpdateDatabase>
+			</Actions>
+		</ActionGroup>
+		<ActionGroup id="exploration-age-current-victory-science-disable" scope="game" criteria="exploration-age-current-victory-science-disabled">
+			<Actions>
+				<UpdateDatabase>
+					<Item>data/age-exploration/victory-science-disable.xml</Item>
+				</UpdateDatabase>
+			</Actions>
+		</ActionGroup>
+		<ActionGroup id="exploration-age-current-victory-culture-disable" scope="game" criteria="exploration-age-current-victory-culture-disabled">
+			<Actions>
+				<UpdateDatabase>
+					<Item>data/age-exploration/victory-culture-disable.xml</Item>
 				</UpdateDatabase>
 			</Actions>
 		</ActionGroup>

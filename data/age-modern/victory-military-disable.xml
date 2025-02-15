@@ -9,17 +9,17 @@
 
   <Strategies>
     <Update>
-      <Where StrategyType="LEGACY_PATH_STRATEGY_IDEOLOGY"/>
+      <Where LegacyPathType="LEGACY_PATH_MODERN_MILITARY"/>
       <Set MinNumConditionsNeeded='100'/>
     </Update>
 
     <Update>
-      <Where StrategyType="LEGACY_PATH_STRATEGY_IDEOLOGY"/>
+      <Where LegacyPathType="LEGACY_PATH_MODERN_MILITARY"/>
       <Set MaxNumConditionsNeeded='100'/>
     </Update>
 
     <Update>
-      <Where StrategyType='LEGACY_PATH_STRATEGY_IDEOLOGY'/>
+      <Where LegacyPathType='LEGACY_PATH_MODERN_MILITARY'/>
       <Set MinConditionPercentage='100'/>
     </Update>
   </Strategies>

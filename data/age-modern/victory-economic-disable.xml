@@ -9,17 +9,17 @@
 
   <Strategies>
     <Update>
-      <Where StrategyType="LEGACY_PATH_STRATEGY_RAILROAD_TYCOON"/>
+      <Where LegacyPathType="LEGACY_PATH_MODERN_ECONOMIC"/>
       <Set MinNumConditionsNeeded='100'/>
     </Update>
 
     <Update>
-      <Where StrategyType="LEGACY_PATH_STRATEGY_RAILROAD_TYCOON"/>
+      <Where LegacyPathType="LEGACY_PATH_MODERN_ECONOMIC"/>
       <Set MaxNumConditionsNeeded='100'/>
     </Update>
 
     <Update>
-      <Where StrategyType='LEGACY_PATH_STRATEGY_RAILROAD_TYCOON'/>
+      <Where LegacyPathType='LEGACY_PATH_MODERN_ECONOMIC'/>
       <Set MinConditionPercentage='100'/>
     </Update>
   </Strategies>

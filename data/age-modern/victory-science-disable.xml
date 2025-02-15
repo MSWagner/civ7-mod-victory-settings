@@ -9,17 +9,17 @@
 
   <Strategies>
     <Update>
-      <Where StrategyType="LEGACY_PATH_STRATEGY_SPACE_RACE"/>
+      <Where LegacyPathType="LEGACY_PATH_MODERN_SCIENCE"/>
       <Set MinNumConditionsNeeded='100'/>
     </Update>
 
     <Update>
-      <Where StrategyType="LEGACY_PATH_STRATEGY_SPACE_RACE"/>
+      <Where LegacyPathType="LEGACY_PATH_MODERN_SCIENCE"/>
       <Set MaxNumConditionsNeeded='100'/>
     </Update>
 
     <Update>
-      <Where StrategyType='LEGACY_PATH_STRATEGY_SPACE_RACE'/>
+      <Where LegacyPathType='LEGACY_PATH_MODERN_SCIENCE'/>
       <Set MinConditionPercentage='100'/>
     </Update>
   </Strategies>
