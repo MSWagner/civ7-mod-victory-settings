@@ -54,7 +54,6 @@ class PanelAdvisorVictory extends Panel {
         this.showVictoryDetailsLink = this.selectedAgeType === "AGE_MODERN" ? true : false;
 
         for (const setupParam of GameSetup.getGameParameters()) {
-            console.error("setupParam", setupParam);
             if (!setupParam.hidden && setupParam.invalidReason == GameSetupParameterInvalidReason.Valid) {
                 const parameterID = GameSetup.resolveString(setupParam.ID);
 
@@ -64,8 +63,6 @@ class PanelAdvisorVictory extends Panel {
                 }
 
                 const value = this.getValueName(setupParam);
-                console.error("ID", parameterID);
-                console.error("Value", value);
 
                 if (value === "true") {
                     switch (parameterID) {
@@ -106,9 +103,7 @@ class PanelAdvisorVictory extends Panel {
             console.error('panel-advisor-victory: Failed to get advisor type');
             return;
         }
-        console.error("advisor", advisor);
         const advisorType = +advisor;
-        console.error("advisorType", advisorType);
         this.selectedAdvisor = advisorType;
         const victoryData = AdvisorProgress.victoryData.get(this.selectedAgeType);
         this.activeQuest = AdvisorProgress.getActiveQuest(this.selectedAdvisor);
@@ -118,7 +113,6 @@ class PanelAdvisorVictory extends Panel {
         }
         this.playerData = AdvisorProgress.getPlayerProgress(this.selectedAdvisor, this.selectedAgeType);
         const legacyPathClass = AdvisorProgress.getLegacyPathClassTypeByAdvisorType(advisor);
-        console.error("legacyPathClass", legacyPathClass);
         if (!this.playerData) {
             console.error('panel-advisor-victory: No local player was found');
             return;
@@ -128,7 +122,6 @@ class PanelAdvisorVictory extends Panel {
         }
         this.victoryQuests = AdvisorProgress.getQuestsByAdvisor(this.selectedAdvisor);
         const chosenVictory = victoryData.find(victory => victory.ClassType == AdvisorProgress.getLegacyPathClassTypeByAdvisorType(advisorType));
-        console.error("chosenVictory", chosenVictory);
         if (!chosenVictory) {
             console.error('panel-advisor-victory: render - Failed to get victoryData');
             return;
@@ -417,13 +410,10 @@ class PanelAdvisorVictory extends Panel {
         victoryTextContainer.classList.add('advisor-panel_victory-text', 'mt-6', 'text-center');
 
         const advisorString = AdvisorProgress.getAdvisorStringByAdvisorType(chosenAdvisor);
-        console.error("advisorString", advisorString);
-        console.error("this.EnabledVictoryAdvisorTypes", this.EnabledVictoryAdvisorTypes);
-
         // victorty title
         const victoryName = document.createElement('p');
         victoryName.classList.add('advisor-panel_victory-title', 'font-title', 'text-lg', 'mb-2', 'uppercase', 'flow-row', 'font-bold', 'tracking-150', 'justify-center', 'text-center', 'text-gradient-secondary');
-        victoryName.classList.toggle('text-xl', window.innerHeight > 1000);
+        victoryName.classList.toggle('text-xl', window.innerHeight > Layout.pixelsToScreenPixels(1000));
         victoryName.setAttribute('data-l10n-id', chosenVictory.Name);
         //civilopedia link
         const civilopedieaLinkWrapper = document.createElement('div');
@@ -431,7 +421,7 @@ class PanelAdvisorVictory extends Panel {
         // victory description
         const victoryDescription = document.createElement('p');
         victoryDescription.classList.add('advisor-panel_victory-description', 'self-center', 'font-body', 'text-sm', 'mb-2', 'font-normal', 'text-center', 'font-fit-shrink', 'max-h-25');
-        victoryDescription.classList.toggle('text-base', window.innerHeight > 1000);
+        victoryDescription.classList.toggle('text-base', window.innerHeight > Layout.pixelsToScreenPixels(1000));
         victoryDescription.setAttribute('data-l10n-id', chosenVictory.Description);
         victoryTextContainer.appendChild(victoryName);
         victoryTextContainer.appendChild(victoryDescription);
@@ -533,7 +523,7 @@ class PanelAdvisorVictory extends Panel {
             progressBar.appendChild(darkAgeBar);
         }
         const maxTicks = this.playerData.maxScore;
-        const barWidth = window.innerHeight > 1000 ? PROGRESS_BAR_WIDTH : PROGRESS_BAR_MIN_WIDTH;
+        const barWidth = window.innerHeight > Layout.pixelsToScreenPixels(1000) ? PROGRESS_BAR_WIDTH : PROGRESS_BAR_MIN_WIDTH;
         const spacing = barWidth / maxTicks;
         let milestoneRewardNum = 0;
         for (let i = 0; i < maxTicks; i++) {
@@ -549,7 +539,7 @@ class PanelAdvisorVictory extends Panel {
                 progressBar.appendChild(checkedLine);
                 const ageProgressRewardAmt = AdvisorProgress.getMilestoneProgressAmount(chosenAdvisor, milestoneRewardNum);
                 const rewardWrapper = this.renderRewardPip(rewards, ageProgressRewardAmt);
-                const rewardOffSet = window.innerHeight > 1000 ? 39 : 27;
+                const rewardOffSet = window.innerHeight > Layout.pixelsToScreenPixels(1000) ? 39 : 27;
                 rewardWrapper.style.left = Layout.pixels((spacing * i) - rewardOffSet);
                 rewardWrapper.setAttribute("tabindex", "-1");
                 this.rewardElemends.push(rewardWrapper);
@@ -557,7 +547,7 @@ class PanelAdvisorVictory extends Panel {
                 const ageProgression = document.createElement('div');
                 ageProgression.role = "paragraph";
                 ageProgression.classList.add('advisor-panel__age-progress', 'absolute', '-bottom-22', 'text-2xs', "pointer-events-auto", 'font-fit-shrink');
-                const textOffSet = window.innerHeight > 1000 ? 75 : 85;
+                const textOffSet = window.innerHeight > Layout.pixelsToScreenPixels(1000) ? 75 : 85;
                 ageProgression.style.left = Layout.pixels((spacing * i) - textOffSet);
                 const ageProgressRewardLabel = Locale.compose("LOC_VICTORY_AGE_PROGRESS", ageProgressRewardAmt);
                 ageProgression.setAttribute('data-l10n-id', ageProgressRewardLabel);
@@ -626,7 +616,7 @@ class PanelAdvisorVictory extends Panel {
         const ageProgressRewardAmt = AdvisorProgress.getMilestoneProgressAmount(chosenAdvisor, milestoneRewardNum);
         const ageProgression = document.createElement('div');
         ageProgression.classList.add('advisor-panel__age-progress', 'absolute', '-bottom-22', 'text-2xs');
-        const textOffSet = window.innerHeight > 1000 ? 75 : 85;
+        const textOffSet = window.innerHeight > Layout.pixelsToScreenPixels(1000) ? 75 : 85;
         ageProgression.style.left = Layout.pixels((spacing * maxTicks) - textOffSet);
         const ageProgressRewardLabel = Locale.compose("LOC_VICTORY_AGE_PROGRESS", ageProgressRewardAmt);
         ageProgression.setAttribute('data-l10n-id', ageProgressRewardLabel);

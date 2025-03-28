@@ -16,7 +16,7 @@ import LeaderSelectModelManager from '/core/ui/shell/leader-select/leader-select
 import { Audio } from '/core/ui/audio-base/audio-support.js';
 const STANDARD_PARAMETERS = ["Age", "Difficulty", "GameSpeeds", "Map", "MapSize"];
 const VICTORY_PARAMETERS = ["MilitaryVictoryEnabled", "ScienceVictoryEnabled", "EconomicVictoryEnabled", "CultureVictoryEnabled"];
-const ADVANCED_PARAMETERS = ["AgeLength", "DisasterIntensity", "CrisesEnabled", "GameRandomSeed", "MapRandomSeed"];
+const ADVANCED_PARAMETERS = ["AgeLength", "DisasterIntensity", "CrisesEnabled", "GameRandomSeed", "MapRandomSeed", "StartPosition"];
 const PROGRESSION_PARAMETERS = ["AgeProgressionFromPlayerEliminatedEnabled"];
 
 /**
